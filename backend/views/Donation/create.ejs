@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Breeze Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../adminPage/assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../adminPage/assets/vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="../adminPage/assets/vendors/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="../adminPage/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <!-- endinject -->
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="../adminPage/assets/css/vertical-light-layout/style.css">
+  <!-- End layout styles -->
+  <link rel="shortcut icon" href="../adminPage/assets/images/favicon.png" />
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_sidebar.html -->
+    <%- include('../sidebar.ejs') %>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_navbar.html -->
+        <%- include('../navbar.ejs') %>
+          <!-- partial -->
+          <div class="main-panel">
+            <div class="content-wrapper pb-0">
+              <main>
+                <section class="py-1 text-center container">
+                  <div class="row py-lg-2">
+                    <div class="col-lg-6 col-md-8 mx-auto">
+                      <h1 class="fw-light">Create a Donation!</h1>
+                      <p class="lead text-body-secondary">Start contributing to a better world!</p>
+                    </div>
+                  </div>
+                </section>
+
+                <div class="container">
+                  <div class="row justify-content-md-center">
+                    <div class="col-md-6">
+                      <form action="/donation/save" method="POST">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td>Donor</td>
+                              <td>
+                                <select name="donor">
+                                  <% donors.forEach(function(donors) { %>
+                                    <option value="<%= donors._id %>">
+                                      <%= donors.name %>
+                                    </option>
+                                    <% }); %>
+                                </select>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Entity to donate</td>
+                              <td>
+                                <select name="entity">
+                                  <% entities.forEach(function(entities) { %>
+                                    <option value="<%= entities._id %>">
+                                      <%= entities.name %>
+                                    </option>
+                                    <% }); %>
+                                </select>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Clothing-parts</td>
+                              <td>
+                                <div id="pecas-container"></div>
+                                <label for="type">Type:</label>
+                                <select id="type">
+                                  <option value="camisas">Shirts</option>
+                                  <option value="calças">Jeans</option>
+                                  <option value="vestidos">Dress</option>
+                                  <option value="casacos">Coats</option>
+                                  <option value="sapatos">Shoes</option>
+                                  <option value="acessórios">Accessories</option>
+                                </select>
+                                <label for="state">Condition:</label>
+                                <select id="state">
+                                  <option value="novo">New</option>
+                                  <option value="pouco-usado">Little used</option>
+                                  <option value="gasto">Very used</option>
+                                </select>
+                                <button type="button" onclick="addPeca()">Add part</button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="2"><button type="submit">Save</button></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </main>
+            </div>
+          </div>
+
+          <script>
+            function addPeca() {
+              const type = document.getElementById("type").value;
+              const state = document.getElementById("state").value;
+              const pecasContainer = document.getElementById("pecas-container");
+              const pecaItem = document.createElement("div");
+              pecaItem.innerHTML = `
+            <input type="hidden" name="parts[type][]" value="${type}" />
+            <input type="hidden" name="parts[state][]" value="${state}" />
+            <p>Type: ${type}, State: ${state}</p>
+            <button type="button" onclick="removePeca(this)">Remover</button>
+        `;
+              pecasContainer.appendChild(pecaItem);
+            }
+
+            function removePeca(button) {
+              button.parentNode.remove();
+            }
+
+            var mensagem = new URLSearchParams(window.location.search).get('mensagem');
+
+            if (mensagem) {
+              alert(mensagem);
+            }
+          </script>
+
+          <style>
+            .btn-container {
+              margin-top: 50px;
+
+            }
+
+            .container-scroller {
+              min-height: 100vh;
+              /* Define a altura mínima como 100% da altura da janela do navegador */
+            }
+
+            .btn {
+              width: 150px;
+            }
+          </style>
+
+          <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="adminPage/assets/vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="../adminPage/assets/vendors/chart.js/Chart.min.js"></script>
+  <script src="../adminPage/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="../adminPage/assets/vendors/flot/jquery.flot.js"></script>
+  <script src="../adminPage/assets/vendors/flot/jquery.flot.resize.js"></script>
+  <script src="../adminPage/assets/vendors/flot/jquery.flot.categories.js"></script>
+  <script src="../adminPage/assets/vendors/flot/jquery.flot.fillbetween.js"></script>
+  <script src="../adminPage/assets/vendors/flot/jquery.flot.stack.js"></script>
+  <script src="../adminPage/assets/vendors/flot/jquery.flot.pie.js"></script>
+  <script src="../adminPage/assets/js/jquery.cookie.js" type="text/javascript"></script>
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="../adminPage/assets/js/off-canvas.js"></script>
+  <script src="../adminPage/assets/js/hoverable-collapse.js"></script>
+  <script src="../adminPage/assets/js/misc.js"></script>
+  <script src="../adminPage/assets/js/settings.js"></script>
+  <script src="../adminPage/assets/js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page -->
+  <script src="../adminPage/assets/js/dashboard.js"></script>
+  <!-- End custom js for this page -->
+</body>
+
+</html>

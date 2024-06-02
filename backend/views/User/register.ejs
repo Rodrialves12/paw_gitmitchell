@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Registo</title>
+    <link href="/stylesheets/signup.css" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/png" href="/assets/img/logoClosetSwap.png"/>
+    <link href="/fontawesome/css/all.css" rel="stylesheet" type="text/css"/>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/login.css" rel="stylesheet" type="text/css"/>
+    
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row no-gutter">
+        <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+        <div class="col-md-8 col-lg-6">
+            <div class="login d-flex align-items-center py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 col-lg-8 mx-auto">
+                            <h5 class="mb-4">
+                                <a href="/user/signup"><i class="fas fa-arrow-circle-left"></i> go back</a>
+                            </h5>
+                            <h3 class="login-heading mb-4">Create an account!</h3>
+                            <form method="post" action="/user/register1" class="form-signup">
+                              
+                                <div class="form-label-group">
+                                    <input name="name" type="text" id="name" class="form-control" placeholder="Name"
+                                           required/>
+                                    <label for="name">Name</label>
+                                </div>
+                                <div class="form-label-group">
+                                    <input name="email" type="text" id="email" class="form-control" placeholder="Email"
+                                           required/>
+                                    <label for="email">Email</label>
+                                </div>
+                                <div class="form-label-group">
+                                    <input name="password" type="password" id="password" class="form-control"
+                                           placeholder="Password" required/>
+                                    <label for="password">Password</label>
+                                </div>
+                                <div class="form-label-group">
+                                    <select name="role" id="role" class="form-control" required>
+                                        <option value="">Choose your role</option>
+                                        <option value="employee">Employee</option>
+                                        <option value="admin">Admin</option>
+                                    </select>
+                                </div>
+                                <div class="form-label-group">
+                                    <input name="birthdate" type="date" id="birthdate" class="form-control"
+                                           placeholder="Birthdate" required/>
+                                    <label for="birthdate">Birthdate</label>
+                                </div>
+                                <div class="form-label-group">
+                                    <input name="address" type="text" id="address" class="form-control"
+                                           placeholder="Address" required/>
+                                    <label for="address">Address</label>
+                                </div>
+                                <div class="form-label-group">
+                                    <input name="location" type="text" id="location" class="form-control"
+                                           placeholder="Location"/>
+                                    <label for="location">Location</label>
+                                </div>
+                                <div class="form-label-group">
+                                    <input name="nif" onchange="checkNif()" type="number" id="Inputnif" class="form-control" placeholder=""
+                                           required/>
+                                    <label for="Inputnif">NIF</label>
+                                </div>
+                                <div class="form-label-group">
+                                    <input name="cell" onchange="checkCell()" type="text" id="Inputcell" class="form-control"
+                                           placeholder="Telephone" required/>
+                                    <label for="Inputcell">Telephone</label>
+                                </div>
+                                <div class="form-label-group">
+                                    <input type="file" name="image" id="image" accept="image/*" class="form-control-file" required>
+                                </div>                               
+                                <div class="text-center text-danger pb-3">
+                                </div>
+                                <button type="submit"
+                                        class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2 text-white">
+                                    Register
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function checkNif() {
+          var input = document.getElementById("Inputnif").value;
+          var number = parseInt(input);
+          
+          if(isNaN(number) ||number < 99999999){
+            alert("NIF must have at least 9 numbers!");
+            document.getElementById("Inputnif").value = "";
+          }
+          if(isNaN(number) ||number > 999999999){
+            alert("NIF must have at least 9 numbers!");
+            document.getElementById("Inputnif").value = "";
+          }
+        }
+
+        function checkCell() {
+          var input = document.getElementById("Inputcell").value;
+          var number = parseInt(input);
+          
+          if(isNaN(number) ||number < 99999999){
+            alert("Cellphone number must have at least 9 numbers!");
+            document.getElementById("Inputcell").value = "";
+          }
+          if(isNaN(number) ||number > 999999999){
+            alert("Cellphone number must have at least 9 numbers!");
+            document.getElementById("Inputcell").value = "";
+          }
+        }
+</script>
+<script src="/jquery/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

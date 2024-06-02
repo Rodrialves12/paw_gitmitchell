@@ -1,0 +1,97 @@
+<!-- <div class="container-fluid">
+    <div class="row no-gutter">
+        <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+        <div class="col-md-8 col-lg-6">
+            <div class="login d-flex align-items-center py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 col-lg-8 mx-auto">
+                            <h5 class="mb-4">
+                                <a routerLink="/"><i class="fas fa-arrow-circle-left"></i> go back</a>
+                            </h5>
+                            <h3 class="login-heading mb-4">Welcome back!</h3>
+                            <form (ngSubmit)="login()" >
+                                <div class="form-label-group">
+                                    <input formControlName="email" type="email" id="email" class="form-control" placeholder="Email" required/>
+                                    <label for="email">Email</label>
+                                </div>
+                                <div class="form-label-group">
+                                    <input formControlName="password" type="password" id="password" class="form-control" placeholder="Password" required/>
+                                    <label for="password">Password</label>
+                                </div>
+                                <button type="submit" (click)="login()" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2 text-white">Start Session</button>
+                                <div class="text-center pt-2">
+                                    <a routerLink="/user/register">Don't have an account? Create one here!</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ -->
+
+ <!-- <main class="form-signin w-100 m-auto">
+    <br>
+    <br>
+    <br>
+      <h2>DONATIONRECLOTH</h2>
+      <h1 class="h3 mb-3 fw-normal">Create an account!</h1>
+      <div class="custom-alert" *ngIf="message">
+        <p>{{ message }}</p>
+      </div>
+      <div class="form-floating">
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email" placeholder="name@example.com" required>
+        <label for="floatingInput">Username/Email</label>
+        <div class="invalid-feedback">Your username is required.</div>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password" placeholder="Password" required>
+        <label for="floatingPassword">Password</label>
+        <div class="invalid-feedback">Your password is required.</div>
+      </div>
+
+      
+      <button class="button-sign" (click)="login()" >Login</button>  
+
+  </main> -->
+  <div class="container-fluid">
+    <div class="row no-gutter">
+        <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+        <div class="col-md-8 col-lg-6">
+            <div class="login d-flex align-items-center py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 col-lg-8 mx-auto">
+                            <h5 class="mb-4">
+                                <a routerLink="/dashboard"><i class="fas fa-arrow-circle-left"></i> Voltar</a>
+                            </h5>
+                            <h3 class="login-heading mb-4">Bem-vindo de volta!</h3>
+                            <form method="post">
+                                <div class="form-label-group">
+                                    <input name="email" type="string" id="email" class="form-control" placeholder="email" [(ngModel)]="user.email" required/>
+                                    <label for="email">Email</label>
+                                </div>
+                                <div class="form-label-group">
+                                    <input name="password" type="password" id="password" class="form-control" placeholder="Palavra-passe" [(ngModel)]="user.password" required/>
+                                    <label for="password">Palavra-passe</label>
+                                </div>
+                                <div class="text-center text-danger pb-3">
+                                    <p>{{ message }}</p>
+                                </div>
+                                <button type="button" (click)="login()" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2 text-white">
+                                    Iniciar Sessão
+                                </button>
+                                <div class="text-center pt-2">
+                                    <a routerLink="/register">Não tem conta? Crie uma aqui!</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

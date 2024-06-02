@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Closet Swap Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="adminPage/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="adminPage/assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="adminPage/assets/vendors/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="adminPage/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="adminPage/assets/css/vertical-light-layout/style.css">
+    <!-- End layout styles -->
+    <link rel="icon" type="image/png" href="/assets/img/logoClosetSwap.png"/>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_sidebar.html -->
+      <%- include('sidebar.ejs') %>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">        
+        <!-- partial:partials/_navbar.html -->
+        <%- include('navbar.ejs') %>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper pb-0">
+            <div class="page-header flex-wrap">
+              <h3 class="mb-0">Hi, welcome back! <span class="ps-0 h6 ps-sm-2 text-muted d-inline-block">Your dashboard is here.</span>
+              </h3>
+              <div class="d-flex">
+                  <a href="/User/register" class="btn btn-sm ms-3 btn-success" role="button">Add User</a>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-3 col-lg-12 stretch-card grid-margin">
+                <div class="row">
+                  <div class="col-xl-12 col-md-6 stretch-card grid-margin grid-margin-sm-0 pb-sm-3">
+                    <div class="card bg-warning">
+                      <div class="card-body px-3 py-4">
+                        <div class="d-flex justify-content-between align-items-start">
+                          <div class="color-card">
+                            <p class="mb-0 color-card-head">Donations</p>
+                            <h2 class="text-white">17</h2>
+                          </div>
+                          <i class="card-icon-indicator mdi mdi-basket bg-inverse-icon-warning"></i>
+                        </div>
+                        <h6 class="text-white">18.33% Since last month</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-12 col-md-6 stretch-card grid-margin grid-margin-sm-0 pb-sm-3">
+                    <div class="card bg-danger">
+                      <div class="card-body px-3 py-4">
+                        <div class="d-flex justify-content-between align-items-start">
+                          <div class="color-card">
+                            <p class="mb-0 color-card-head">Benefiting Entities</p>
+                            <h2 class="text-white">134</h2>
+                          </div>
+                          <i class="card-icon-indicator mdi mdi-cube-outline bg-inverse-icon-danger"></i>
+                        </div>
+                        <h6 class="text-white">13.21% Since last month</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-12 col-md-6 stretch-card grid-margin grid-margin-sm-0 pb-sm-3 pb-lg-0 pb-xl-3">
+                    <div class="card bg-primary">
+                      <div class="card-body px-3 py-4">
+                        <div class="d-flex justify-content-between align-items-start">
+                          <div class="color-card">
+                            <p class="mb-0 color-card-head">Donors</p>
+                            <h2 class="text-white">2368</h2>
+                          </div>
+                          <i class="card-icon-indicator mdi mdi-briefcase-outline bg-inverse-icon-primary"></i>
+                        </div>
+                        <h6 class="text-white">67.98% Since last month</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-12 col-md-6 stretch-card pb-sm-3 pb-lg-0">
+                    <div class="card bg-success">
+                      <div class="card-body px-3 py-4">
+                        <div class="d-flex justify-content-between align-items-start">
+                          <div class="color-card">
+                            <p class="mb-0 color-card-head">Employees</p>
+                            <h2 class="text-white">2368</h2>
+                          </div>
+                          <i class="card-icon-indicator mdi mdi-account-circle bg-inverse-icon-success"></i>
+                        </div>
+                        <h6 class="text-white">20.32% Since last month</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-9 stretch-card grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title text-black">To do Task List</h4>
+                    <p class="text-muted">Created by anonymous</p>
+                    <div class="list-wrapper">
+                      <ul class="d-flex flex-column-reverse todo-list todo-list-custom">
+                        <li>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="checkbox" type="checkbox"> Meeting with admin2 </label>
+                            <span class="list-time">4 Hours Ago</span>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="checkbox" type="checkbox"> Create invoice ofr donation 123sa </label>
+                            <span class="list-time">6 Hours Ago</span>
+                          </div>
+                        </li>
+                        <li class="completed">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="checkbox" type="checkbox" checked> Prepare for presentation </label>
+                            <span class="list-time">2 Hours Ago</span>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="checkbox" type="checkbox"> Create an employee </label>
+                            <span class="list-time">8 Hours Ago</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="add-items d-flex flex-wrap flex-sm-nowrap">
+                      <input type="text" class="form-control todo-list-input flex-grow" placeholder="Add task name">
+                      <button class="add btn btn-primary font-weight-regular  text-nowrap" id="add-task">Add Task</button>
+                    </div>
+                  </div>
+                </div>
+                 
+                </div>
+            </div>
+            <!-- <div class="row">
+              <div class="col-xl-8 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body px-0 overflow-auto">
+                    <h4 class="card-title ps-4">Purchase History</h4>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead class="bg-light">
+                          <tr>
+                            <th> Doner </th>
+                            <th> Entity </th>
+                            <th> Condition </th>
+                            <th> Points </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="d-flex align-items-center">
+                                <img src="adminPage/assets/images/faces/face1.jpg" alt="image" />
+                                <div class="table-user-name ms-3">
+                                  <p class="mb-0 font-weight-medium">Cecelia Cooper</p>
+                                  <small> Payment on hold</small>
+                                </div>
+                              </div>
+                            </td>
+                            <td> Angular Admin</td>
+                            <td>
+                              <div class="badge badge-inverse-success"> Completed </div>
+                            </td>
+                            <td> $ 77.99 </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex align-items-center">
+                                <img src="adminPage/assets/images/faces/face10.jpg" alt="image" />
+                                <div class="table-user-name ms-3">
+                                  <p class="mb-0 font-weight-medium">Victor Watkins</p>
+                                  <small>Email verified</small>
+                                </div>
+                              </div>
+                            </td>
+                            <td> Angular Admin </td>
+                            <td>
+                              <div class="badge badge-inverse-success"> Completed </div>
+                            </td>
+                            <td> $245.30 </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex align-items-center">
+                                <img src="adminPage/assets/images/faces/face11.jpg" alt="image" />
+                                <div class="table-user-name ms-3">
+                                  <p class="mb-0 font-weight-medium">Ada Burgess</p>
+                                  <small>Email verified</small>
+                                </div>
+                              </div>
+                            </td>
+                            <td> One page html </td>
+                            <td>
+                              <div class="badge badge-inverse-danger"> Completed </div>
+                            </td>
+                            <td> $ 160.25 </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex align-items-center">
+                                <img src="adminPage/assets/images/faces/face13.jpg" alt="image" />
+                                <div class="table-user-name ms-3">
+                                  <p class="mb-0 font-weight-medium">Dollie Lynch</p>
+                                  <small>Email verified</small>
+                                </div>
+                              </div>
+                            </td>
+                            <td> Wordpress </td>
+                            <td>
+                              <div class="badge badge-inverse-success "> Declined </div>
+                            </td>
+                            <td> $ 123.21 </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex align-items-center">
+                                <img src="adminPage/assets/images/faces/face16.jpg" alt="image" />
+                                <div class="table-user-name ms-3">
+                                  <p class="mb-0 font-weight-medium">Harry Holloway</p>
+                                  <small>Payment on process</small>
+                                </div>
+                              </div>
+                            </td>
+                            <td> VueJs Application </td>
+                            <td>
+                              <div class="badge badge-inverse-danger"> Declined </div>
+                            </td>
+                            <td> $ 150.00 </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <a class="text-black mt-3 d-block ps-4" href="#"> <span class="font-weight-medium h6">View all order history</span> <i class="mdi mdi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="card-title font-weight-medium">Business Survey</div>
+                    <p class="text-muted">Lorem ipsum dolor sitadipiscing elit, sed amet do eiusmod tempor we find a new solution </p>
+                    <div class="d-flex flex-wrap border-bottom py-2 border-top justify-content-between">
+                      <img class="survey-img mb-lg-3" src="adminPage/assets/images/dashboard/img_3.jpg" alt="">
+                      <div class="pt-2">
+                        <h5 class="mb-0">Villa called Archagel</h5>
+                        <p class="mb-0 text-muted">St, San Diego, CA </p>
+                        <h5 class="mb-0">$600/mo</h5>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-wrap border-bottom py-2 justify-content-between">
+                      <img class="survey-img mb-lg-3" src="adminPage/assets/images/dashboard/img_1.jpg" alt="">
+                      <div class="pt-2">
+                        <h5 class="mb-0">Luxury villa in Hermo</h5>
+                        <p class="mb-0 text-muted">Glendale, CA </p>
+                        <h5 class="mb-0">$900/mo</h5>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-wrap border-bottom py-2 justify-content-between">
+                      <img class="survey-img mb-lg-3" src="adminPage/assets/images/dashboard/img_2.jpg" alt="">
+                      <div class="pt-2">
+                        <h5 class="mb-0">House on the Clarita</h5>
+                        <p class="mb-0 text-muted">Business Survey </p>
+                        <h5 class="mb-0">$459/mo</h5>
+                      </div>
+                    </div>
+                    <a class="text-black mt-3 d-block font-weight-medium h6" href="#">View all <i class="mdi mdi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+  <div class="d-sm-flex justify-content-center justify-content-sm-between">
+    <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024 <a href="https://www.bootstrapdash.com/" target="_blank">BootstrapDash</a>. All rights reserved.</span>
+  </div>
+</footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="adminPage/assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="adminPage/assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="adminPage/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="adminPage/assets/vendors/flot/jquery.flot.js"></script>
+    <script src="adminPage/assets/vendors/flot/jquery.flot.resize.js"></script>
+    <script src="adminPage/assets/vendors/flot/jquery.flot.categories.js"></script>
+    <script src="adminPage/assets/vendors/flot/jquery.flot.fillbetween.js"></script>
+    <script src="adminPage/assets/vendors/flot/jquery.flot.stack.js"></script>
+    <script src="adminPage/assets/vendors/flot/jquery.flot.pie.js"></script>
+    <script src="adminPage/assets/js/jquery.cookie.js" type="text/javascript"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="adminPage/assets/js/off-canvas.js"></script>
+    <script src="adminPage/assets/js/hoverable-collapse.js"></script>
+    <script src="adminPage/assets/js/misc.js"></script>
+    <script src="adminPage/assets/js/settings.js"></script>
+    <script src="adminPage/assets/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="adminPage/assets/js/dashboard.js"></script>
+    <!-- End custom js for this page -->
+  </body>
+</html>
